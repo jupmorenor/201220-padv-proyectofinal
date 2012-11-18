@@ -61,6 +61,7 @@ alter table RutaEstacion
   add constraint fk_Ruta_RutaEstacion1
   foreign key (idRuta_fk)
   references ruta(codigoRuta)
+alter table RutaEstacion
   add constraint fk_Estacion_RutaEstacion1
   foreign key (idEstacion_fk)
   references estacion(codigoEstacion);
@@ -74,6 +75,7 @@ alter table RutaHorario
   add constraint fk_Ruta_RutaHorario1
   foreign key (codRuta_fk)
   references ruta(codigoRuta)
+alter table RutaHorario
   add constraint fk_Horario_RutaEstacion1
   foreign key (codHorario_fk)
   references horario(idHorario);
@@ -82,6 +84,7 @@ alter table RutaTransporte
   add constraint fk_Ruta_RutaTransporte1
   foreign key (codRutaT_fk)
   references ruta(codigoRuta)
+alter table RutaTransporte
   add constraint fk_Transporte_RutaEstacion1
   foreign key (codTransporte_fk)
   references transporte(codigoInterno);
@@ -90,6 +93,7 @@ alter table PersonaTransporte
   add constraint fk_Persona_PersonaTransporte1
   foreign key (IdentificacionPersona_fk)
   references persona(identificacionPersona)
+alter table PersonaTransporte
   add constraint fk_Transporte_PersonaTransporte1
   foreign key (codTransporteP_fk)
   references transporte(codigoInterno);
