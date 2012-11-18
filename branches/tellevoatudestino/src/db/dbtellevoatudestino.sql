@@ -8,7 +8,7 @@ create table persona(identificacionPersona varchar(20), nombrePersona varchar(20
 create table tipoPersona(idTipoPersona int, descripTipoPersona varchar(20));
 create table horario(idHorario int, dia int);
 create table ciudad(codCiudad int, nombreCiudad varchar (20));
-create table estacion (codigoEstacion varchar(3), nombreEstacion varchar(20), direccionEstacion varchar(20), idTipoEstacion_fk varchar(3),idCuidad int);
+create table estacion (codigoEstacion varchar(3), nombreEstacion varchar(20), direccionEstacion varchar(20), idTipoEstacion_fk varchar(3),idCiudad int);
 create table tipoEstacion(idTipoEstacion varchar(3), nombreTipoEstacion varchar(20));
 
 create table RutaEstacion(idRutaEstacion varchar(3), idRuta_fk varchar(3),idEstacion_fk varchar(3));
@@ -30,7 +30,7 @@ alter table tipoPersona
   add primary key (idTipoPersona);
 alter table horario
   add primary key (idHorario);
-alter table cuidad
+alter table ciudad
   add primary key (codCiudad);
 alter table estacion
   add primary key (codigoEstacion);
@@ -68,9 +68,9 @@ alter table RutaEstacion
   references estacion(codigoEstacion);
   
 alter table estacion
-  add constraint fk_Cuidad_Estacion1
+  add constraint fk_Ciudad_Estacion1
   foreign key (idCiudad)
-  references cuidad(codCiudad);
+  references ciudad(codCiudad);
   
 alter table RutaHorario
   add constraint fk_Ruta_RutaHorario1
