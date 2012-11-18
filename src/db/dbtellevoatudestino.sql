@@ -35,7 +35,7 @@ alter table ciudad
 alter table estacion
   add primary key (codigoEstacion);
 alter table tipoEstacion
-  add primary key (codigoTipoEstacion);
+  add primary key (idTipoEstacion);
 
 alter table transporte
   add constraint fk_TipoTransporte_Transporte1
