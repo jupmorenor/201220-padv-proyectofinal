@@ -38,57 +38,57 @@ alter table tipoEstacion
 
 alter table transporte
   add constraint fk_TipoTransporte_Transporte1
-  foreingn key (idTipoTransporte_fk)
-  reference tipoTransporte(idTipoTransporte);
+  foreign key (idTipoTransporte_fk)
+  references tipoTransporte(idTipoTransporte);
   
 alter table persona
   add constraint fk_TipoTransportePersona_Persona1
-  foreingn key (idTipoPersona_fk)
-  reference tipoPersona(idTipoPersona);
+  foreign key (idTipoPersona_fk)
+  references tipoPersona(idTipoPersona);
   
 alter table estacion
   add constraint fk_TipoTransporteEstacion_Estacion1
-  foreingn key (idTipoEstacion_fk)
-  reference tipoEstacion(idTipoEstacion);
+  foreign key (idTipoEstacion_fk)
+  references tipoEstacion(idTipoEstacion);
   
 alter table mantenimiento
   add constraint fk_Transporte_Mantenimiento1
-  foreingn key (idTransporte_fk)
-  reference transporte(codigoInterno);
+  foreign key (idTransporte_fk)
+  references transporte(codigoInterno);
 
 alter table RutaEstacion
   add constraint fk_Ruta_RutaEstacion1
-  foreingn key (idRuta_fk)
-  reference ruta(codigoRuta)
+  foreign key (idRuta_fk)
+  references ruta(codigoRuta)
   add constraint fk_Estacion_RutaEstacion1
-  foreingn key (idEstacion_fk)
-  reference estacion(codigoEstacion);
+  foreign key (idEstacion_fk)
+  references estacion(codigoEstacion);
   
 alter table estacion
   add constraint fk_Cuidad_Estacion1
-  foreingn key (idCuidad)
-  reference cuidad(codCiudad);
+  foreign key (idCuidad)
+  references cuidad(codCiudad);
   
 alter table RutaHorario
   add constraint fk_Ruta_RutaHorario1
-  foreingn key (codRuta_fk)
-  reference ruta(codigoRuta)
+  foreign key (codRuta_fk)
+  references ruta(codigoRuta)
   add constraint fk_Horario_RutaEstacion1
-  foreingn key (codHorario_fk)
-  reference horario(idHorario);
+  foreign key (codHorario_fk)
+  references horario(idHorario);
   
 alter table RutaTransporte
   add constraint fk_Ruta_RutaTransporte1
-  foreingn key (codRutaT_fk)
-  reference ruta(codigoRuta)
+  foreign key (codRutaT_fk)
+  references ruta(codigoRuta)
   add constraint fk_Transporte_RutaEstacion1
-  foreingn key (codTransporte_fk)
-  reference transporte(codigoInterno);
+  foreign key (codTransporte_fk)
+  references transporte(codigoInterno);
   
 alter table PersonaTransporte
   add constraint fk_Persona_PersonaTransporte1
-  foreingn key (IdentificacionPersona_fk)
-  reference persona(identificacionPersona)
+  foreign key (IdentificacionPersona_fk)
+  references persona(identificacionPersona)
   add constraint fk_Transporte_PersonaTransporte1
-  foreingn key (codTransporteP_fk)
-  reference transporte(codigoInterno);
+  foreign key (codTransporteP_fk)
+  references transporte(codigoInterno);
