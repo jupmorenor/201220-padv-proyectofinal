@@ -10,7 +10,7 @@
  * Presentado por:
  * Juan Pablo Moreno Rico - 20111020059
  * Anderson Ramirez - 20111020---
- * ------ - 20112020---
+ * Karen Vanessa Angulo Sogamoso - 20112020055
  * ------------------------------------------
  */
 
