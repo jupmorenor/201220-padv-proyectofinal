@@ -1,19 +1,20 @@
 create database tellevoatudestino_jak;
 use tellevoatudestino_jak;
 create table ruta(codigoRuta varchar(3), nombreRuta varchar(20), tarifaRuta int);
-create table transporte(capacidad int, placa varchar(6), codigoInterno int, consumoCombustible float);
+create table transporte(capacidad int, placa varchar(6), codigoInterno int, consumoCombustible float,idTipoTransporte_fk varchar (3));
 create table tipoTransporte(idTipoTransporte varchar(3),descripTipoTransporte varchar (20));
-create table mantenimiento(idMantenimiento varchar(3), seguro varchar(20), revision varchar(20));
-create table persona(identificacionPersona varchar(20), nombrePersona varchar(20), telefono varchar(20), direccion varchar(20), fechaNacimiento Date );
+create table mantenimiento(idMantenimiento varchar(3), seguro varchar(20), revision varchar(20), idTransporte_fk int);
+create table persona(identificacionPersona varchar(20), nombrePersona varchar(20), telefono varchar(20), direccion varchar(20), fechaNacimiento Date,idTipoPersona_fk int);
 create table tipoPersona(idTipoPersona int, descripTipoPersona varchar(20));
 create table horario(idHorario int, dia int);
 create table cuidad(codCuidad int, nombreCiudad varchar (20));
-create table estacion (codigoEstacion varchar(3), nombreEstacion varchar(20), direccionEstacion varchar(20));
+create table estacion (codigoEstacion varchar(3), nombreEstacion varchar(20), direccionEstacion varchar(20), idTipoEstacion_fk varchar(3),idCuidad int);
 create table tipoEstacion(idTipoEstacion varchar(3), nombreTipoEstacion varchar(20));
 
-create table RutaEstacion(idRutaEstacion varchar(3));
-create table RutaHorario(idRutaHorario varchar(3));
-create table PersonaTransporte(idPersonaTransporte varchar(3));
+create table RutaEstacion(idRutaEstacion varchar(3), idRuta_fk varchar(3),idEstacion_fk varchar(3));
+create table RutaHorario(idRutaHorario varchar(3), codRuta_fk varchar (3),codHorario_fk int);
+create table RutaTransporte(idRutaTransporte varchar(3),codRutaT_fk varchar (3), codTransporte_fk int);
+create table PersonaTransporte(idPersonaTransporte varchar(3),IdentificacionPersona_fk varchar(20), codTransporteP_fk int );
 
 alter table ruta
   add primary key (codigoRuta);
