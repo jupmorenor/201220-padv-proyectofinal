@@ -9,7 +9,7 @@
  * Proyecto de primer corte de Programacion Avanzada
  * Presentado por:
  * Juan Pablo Moreno Rico - 20111020059
- * Anderson Ramirez - 20111020---
+ * Anderson Orlando Ramirez Lamprea - 20111020072
  * Karen Vanessa Angulo Sogamoso - 20112020055
  * ------------------------------------------
  */
@@ -19,8 +19,8 @@ package nucleo;
 /**
  * Clase que representa un bus de la empresa
  * @author Juan Pablo Moreno Rico - 20111020059
- * @author Anderson Ramirez - 20111020---
- * @author ------ - 20112020---
+ * @author Anderson Orlando Ramirez Lamprea - 20111020072
+ * @author Karen Vanessa Angulo Sogamoso - 20112020055
  * @version 1.0
  */
 public class Bus extends Transporte implements AccesoaDatos{
@@ -36,8 +36,8 @@ public class Bus extends Transporte implements AccesoaDatos{
      * @return cadena
      */
     public String guardarRegistro() {
-    	String cadena = "insert into bus values('" + this.getPlaca() + "'," 
-    		+ this.getCapacidad() + ",'" + this.getCodigoInterno() + "')"; 	
+    	String cadena = "insert into transporte values(" + this.getCapacidad() + 
+    			",'" + this.getPlaca() + "'," + this.getCodigoInterno() + "," + this.getConsumoCombustible() + ")"; 	
     	return cadena;
     }
 
@@ -46,7 +46,7 @@ public class Bus extends Transporte implements AccesoaDatos{
      * @return cadena
      */
     public String eliminarRegistro() {
-    	String cadena = "delete from bus where(placa='" + this.getPlaca() + "')";
+    	String cadena = "delete from transporte where(placa='" + this.getPlaca() + "')";
     	return cadena;
     }
 
@@ -55,8 +55,8 @@ public class Bus extends Transporte implements AccesoaDatos{
      * @return cadena
      */
     public String actualizarRegistro() {
-    	String cadena = "update bus set codigoBus='" + this.getCodigoInterno() 
-    					+ "' where(placa= '" + this.getPlaca() + "')";	
+    	String cadena = "update transporte set codigoBus=" + this.getCodigoInterno() 
+    					+ " where(placa= '" + this.getPlaca() + "')";	
     	return cadena;
     }
     
@@ -65,7 +65,7 @@ public class Bus extends Transporte implements AccesoaDatos{
      * @return cadena
      */
     public String buscarRegistro() {
-    	String cadena = "select * from bus where(placa='" + this.getPlaca() + "')";    	
+    	String cadena = "select * from transporte where(placa='" + this.getPlaca() + "')";    	
     	return cadena;
     }
     
