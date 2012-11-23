@@ -101,3 +101,13 @@ alter table PersonaTransporte
   add constraint fk_Transporte_PersonaTransporte1
   foreign key (codTransporteP_fk)
   references transporte(codigoInterno);
+
+insert into tipoestacion values('1', 'Parada');
+insert into tipoestacion values('2', 'Sucursal');
+
+insert into tipopersona values('1', 'Conductor');
+insert into tipopersona values('2', 'Asistente');
+
+insert into tipotransporte values('1', 'Bus');
+insert into tipotransporte values('2', 'Colectivo');
+
