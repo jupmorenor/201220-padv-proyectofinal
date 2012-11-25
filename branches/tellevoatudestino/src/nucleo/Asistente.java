@@ -32,27 +32,32 @@ public class Asistente extends Persona implements AccesoaDatos{
 
 	@Override
 	public String guardarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
+		String cadena = "insert into persona values('" + this.getIdentificacion() 
+				+ "','" + this.getNombre() + "','" + this.getTelefono() + "','" 
+				+ this.getDireccion() + "'," + this.getFechaNacimiento() + ",'2');";
+		return cadena;
 	}
 
 	@Override
 	public String eliminarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
+		String cadena = "delete from persona where(identificacionPersona='" 
+				+ this.getIdentificacion() + "');";
+		return cadena;
 	}
 
 	@Override
 	public String actualizarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
+		String cadena = "update persona set telefono='" + this.getTelefono() 
+				+ "', direccion='" + this.getDireccion() + "' where(identificacionPersona='"
+				+ this.getIdentificacion() + "');";
+		return cadena;
 	}
 
 	@Override
 	public String buscarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
+		String cadena = "select * from persona where(identificacionPersona='"  
+				+ this.getIdentificacion() + "');";
+		return cadena;
 	}
 
 }
-
