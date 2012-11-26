@@ -30,13 +30,13 @@ public class Mantenimiento {
 	private String tipoMantenimiento;
 	
 	/**
-   * Crea un nuevo estado de mantenimiento
-   */
-  public Mantenimiento () {
-  }
+     * Crea un nuevo estado de mantenimiento
+     */
+    public Mantenimiento () {
+    }
 
-  /**
-   * Devuelte el registro del estado del mantenimiento
+    /**
+     * Devuelte el registro del estado del mantenimiento
 	 * @return tipoMantenimiento
 	 */
 	public String getTipoMantenimiento() {
