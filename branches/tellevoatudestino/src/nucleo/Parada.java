@@ -22,7 +22,7 @@ package nucleo;
  * @author Karen Vanessa Angulo Sogamoso - 20112020055
  * @version 1.0
  */
-public class Parada extends Estacion implements AccesoaDatos{
+public class Parada extends Estacion{
 
     /**
      * Crea una nueva parada para una ruta
@@ -30,28 +30,12 @@ public class Parada extends Estacion implements AccesoaDatos{
     public Parada () {
     }
 
-	@Override
-	public String guardarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String eliminarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String actualizarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String buscarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public String guardarRegistro() {
+        String cadena = "insert into estacion values('" + this.getCodigoEstacion()
+              + "','" + this.getNombre() + "','" + this.getDireccion() + "','2'," 
+              + this.getCiudad().getCodigoCiudad() + "');";
+        return cadena;
+    }
 
 }
