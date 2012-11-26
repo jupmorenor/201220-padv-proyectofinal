@@ -1,4 +1,6 @@
-* Universidad Distrital Francisco Jose de Caldas
+/* 
+ * ------------------------------------------
+ * Universidad Distrital Francisco Jose de Caldas
  * Facultad de Ingenieria
  * Proyecto curricular de Ingenieria de Sistemas 
  * 
@@ -20,22 +22,22 @@ package nucleo;
  * @author Karen Vanessa Angulo Sogamoso - 20112020055
  * @version 1.0
  */
-public abstract class Estacion {
-
-    /**
-     * Direccion de ubicacion de la estacion
-     */
-    private String direccion;
-
-    /**
-     * Nombre de la estacion
-     */
-    private String nombreEstacion;
+public abstract class Estacion implements AccesoaDatos{
 
     /**
      * Codigo de la estacion
      */
     private String codigoEstacion;
+    
+    /**
+     * Nombre de la estacion
+     */
+    private String nombreEstacion;
+    
+    /**
+     * Direccion de ubicacion de la estacion
+     */
+    private String direccionEstacion;
 
     /**
      * Ciudad donde se ubica la estacion
@@ -69,7 +71,7 @@ public abstract class Estacion {
      * @return direccion
      */
     public String getDireccion () {
-        return direccion;
+        return direccionEstacion;
     }
 
     /**
@@ -77,7 +79,7 @@ public abstract class Estacion {
      * @param dir direccion
      */
     public void setDireccion (String dir) {
-        this.direccion = dir;
+        this.direccionEstacion = dir;
     }
 
     /**
@@ -100,15 +102,40 @@ public abstract class Estacion {
      * Devuelve la ciudad donde se ubica la estacion
      * @return mCiudad
      */
-	public Ciudad getCiudad() {
-		return mCiudad;
-	}
+    public Ciudad getCiudad() {
+        return mCiudad;
+    }
+    
+    /**
+    * Establece la ciudad donde se ubica la estacion
+    * @param mCiudad ciudad de ubicacion
+    */
+    public void setCiudad(Ciudad mCiudad) {
+        this.mCiudad = mCiudad;
+    }
+    
+    @Override
+    public abstract String guardarRegistro();
+    
+    @Override
+    public String eliminarRegistro() {
+        String cadena = "delete from estacion where(nombreEstacion='" + this.getNombre()
+              + "');";
+        return cadena;
+    }
+    
+    @Override
+    public String actualizarRegistro() {
+        String cadena = "update estacion set nombreEstacion='" + this.getNombre()
+              + "', direccionEstacion='" + this.getDireccion() + "' where(codigoEstacion='"
+              + this.getCodigoEstacion() + "');";
+        return cadena;
+    }
+    
+    @Override
+    public String buscarRegistro() {
+        String cadena = "select * from estacion where(nombreEstacion='" + this.getNombre() + "');";
+        return cadena;
+    }
 
-	/**
-	 * Establece la ciudad donde se ubica la estacion
-	 * @param mCiudad ciudad de ubicacion
-	 */
-	public void setCiudad(Ciudad mCiudad) {
-		this.mCiudad = mCiudad;
-	}
 }
