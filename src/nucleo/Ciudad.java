@@ -74,26 +74,30 @@ public class Ciudad implements AccesoaDatos{
 
 	@Override
 	public String guardarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
+		String cadena = "insert into ciudad values('" + this.getCodigoCiudad() 
+				+ "','" + this.getNombreCiudad() + "');";
+		return cadena;
 	}
 
 	@Override
 	public String eliminarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
+		String cadena = "delete from ciudad where(nombreCiudad='" + this.getNombreCiudad()
+				+ "');";
+		return cadena;
 	}
 
 	@Override
 	public String actualizarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
+		String cadena = "update ciudad set codCiudad='" + this.getCodigoCiudad()
+				+ "' where(nombreCiudad='" + this.getNombreCiudad() + "');";
+		return cadena;
 	}
 
 	@Override
 	public String buscarRegistro() {
-		// TODO Auto-generated method stub
-		return null;
+		String cadena = "select * from ciudad where(nombreCiudad='" + this.getNombreCiudad()
+				+ "');";
+		return cadena;
 	}
 
 }
