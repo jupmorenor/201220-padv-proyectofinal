@@ -19,7 +19,7 @@ import java.sql.*;
 
 /**
  * Clase realiza la conexion con la base de datos
- * @author Adriana Maritza Montejo [creo]
+ * @author Adriana Maritza Montejo
  */
 public class Conectar 
 {
@@ -69,9 +69,9 @@ public class Conectar
 	 * ejecutar transacciones (insertar, actualizar, eliminar)
 	 * @return rta
 	 */
-	public int EjecutarSql()
+	public String EjecutarSql()
 	{
-		int rta = 0;
+		String rta = "";
 		try
 		{
    			Statement stmt=dbConecta.createStatement();
