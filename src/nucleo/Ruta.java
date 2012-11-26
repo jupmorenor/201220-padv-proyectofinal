@@ -24,100 +24,99 @@ package nucleo;
  */
 public class Ruta implements AccesoaDatos{
 
-    /**
-     * Codigo interno de la ruta
-     */
-    private String codigoRuta;
+	/**
+	 * Codigo interno de la ruta
+	 */
+	private String codigoRuta;
 
-    /**
-     * Nombre de la ruta
-     */
-    private String nombreRuta;
+	/**
+	 * Nombre de la ruta
+	 */
+	private String nombreRuta;
 
-    /**
-     * Valor a pagar para usar la ruta
-     */
-    private int tarifaRuta;
+	/**
+	 * Valor a pagar para usar la ruta
+	 */
+	private int tarifaRuta;
 
-    /**
-     * Crea una nueva ruta
-     */
-    public Ruta () {
-    }
+	/**
+	 * Crea una nueva ruta
+	 */
+	public Ruta () {
+	}
 
-    /**
-     * Devuelve el codigo de la ruta 
-     * @return codigoRuta
-     */
-    public String getCodigoRuta () {
-        return codigoRuta;
-    }
+	/**
+	 * Devuelve el codigo de la ruta 
+	 * @return codigoRuta
+	 */
+	public String getCodigoRuta () {
+		return codigoRuta;
+	}
 
-    /**
-     * Establece el codigo de la ruta 
-     * @param cod codigo de la ruta
-     */
-    public void setCodigoRuta (String cod) {
-        this.codigoRuta = cod;
-    }
+	/**
+	 * Establece el codigo de la ruta 
+	 * @param cod codigo de la ruta
+	 */
+	public void setCodigoRuta (String cod) {
+		this.codigoRuta = cod;
+	}
 
-    /**
-     * Devuelve el nombre de la ruta 
-     * @return nombreRuta
-     */
-    public String getNombreRuta () {
-        return nombreRuta;
-    }
+	/**
+	 * Devuelve el nombre de la ruta 
+	 * @return nombreRuta
+	 */
+	public String getNombreRuta () {
+		return nombreRuta;
+	}
 
-    /**
-     * Establece el nombre de la ruta
-     * @param nom nombre de la ruta
-     */
-    public void setNombreRuta (String nom) {
-        this.nombreRuta = nom;
-    }
+	/**
+	 * Establece el nombre de la ruta
+	 * @param nom nombre de la ruta
+	 */
+	public void setNombreRuta (String nom) {
+		this.nombreRuta = nom;
+	}
 
-    /**
-     * Devuelve el valor de la tarifa de la ruta 
-     * @return tarifaRuta
-     */ 
-    public int getTarifaRuta () {
-        return tarifaRuta;
-    }
+	/**
+	 * Devuelve el valor de la tarifa de la ruta 
+	 * @return tarifaRuta
+	 */ 
+	public int getTarifaRuta () {
+		return tarifaRuta;
+	}
 
-    /**
-     * Establece el valor de la tarifa de la ruta
-     * @param tar valor de la tarifa
-     */
-    public void setTarifaRuta (int tar) {
-        this.tarifaRuta = tar;
-    }
+	/**
+	 * Establece el valor de la tarifa de la ruta
+	 * @param tar valor de la tarifa
+	 */
+	public void setTarifaRuta (int tar) {
+		this.tarifaRuta = tar;
+	}
 
-    @Override
-    public String guardarRegistro() {
-      String cadena = "insert into ruta values('" + this.getCodigoRuta() 
-            + "','" + this.getNombreRuta() + "','" + this.getTarifaRuta() +"');";
-      return cadena;
-    }
-    
-    @Override
-    public String eliminarRegistro() {
-      String cadena = "delete from ruta where(nombreRuta='" + this.getNombreRuta() + "');";
-      return cadena;
-    }
-    
-    @Override
-    public String actualizarRegistro() {
-      String cadena = "update ruta set tarifaRuta='" + this.getTarifaRuta() 
-            + "' where(nombreRuta='" + this.getNombreRuta() + "');";
-      return cadena;
-    }
-    
-    @Override
-    public String buscarRegistro() {
-      String cadena = "select * from ruta where(nombreRuta='" + this.getNombreRuta() + "');";
-      return cadena;
-    }
-    
+	@Override
+	public String guardarRegistro() {
+		String cadena = "insert into ruta values('" + this.getCodigoRuta() 
+				+ "','" + this.getNombreRuta() + "','" + this.getTarifaRuta() +"');";
+		return cadena;
+	}
+
+	@Override
+	public String eliminarRegistro() {
+		String cadena = "delete from ruta where(nombreRuta='" + this.getNombreRuta() + "');";
+		return cadena;
+	}
+
+	@Override
+	public String actualizarRegistro() {
+		String cadena = "update ruta set tarifaRuta='" + this.getTarifaRuta() 
+				+ "' where(nombreRuta='" + this.getNombreRuta() + "');";
+		return cadena;
+	}
+
+	@Override
+	public String buscarRegistro() {
+		String cadena = "select * from ruta where(nombreRuta='" + this.getNombreRuta() + "');";
+		return cadena;
+	}
+
 }
-
