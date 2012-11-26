@@ -23,11 +23,32 @@ package nucleo;
  * @version 1.0
  */
 public class Mantenimiento {
+	
+	/**
+	 * Tipo de registro del estado del mantenimiento
+	 */
+	private String tipoMantenimiento;
+	
+	/**
+   * Crea un nuevo estado de mantenimiento
+   */
+  public Mantenimiento () {
+  }
 
-    /**
-     * Crea un nuevo estado de mantenimiento
-     */
-    public Mantenimiento () {
-    }
+  /**
+   * Devuelte el registro del estado del mantenimiento
+	 * @return tipoMantenimiento
+	 */
+	public String getTipoMantenimiento() {
+		return tipoMantenimiento;
+	}
+
+	/**
+	 * Establece el registro del estado del mantenimiento
+	 * @param tipoMantenimiento valor de entrada
+	 */
+	public void setTipoMantenimiento(String tipoMantenimiento) {
+		this.tipoMantenimiento = tipoMantenimiento;
+	}
 
 }
