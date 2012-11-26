@@ -22,7 +22,7 @@ package nucleo;
  * @author Karen Vanessa Angulo Sogamoso - 20112020055
  * @version 1.0
  */
-public class Conductor extends Persona implements AccesoaDatos{
+public class Conductor extends Persona {
 
     /**
      * Numero de licencia de conduccion del conductor
@@ -51,34 +51,12 @@ public class Conductor extends Persona implements AccesoaDatos{
         this.licenciaConduccion = lic;
     }
 
-	@Override
-	public String guardarRegistro() {
-		String cadena = "insert into persona values('" + this.getIdentificacion() 
-				+ "','" + this.getNombre() + "','" + this.getTelefono() + "','" 
-				+ this.getDireccion() + "'," + this.getFechaNacimiento() + ",'1');";
-		return cadena;
-	}
-
-	@Override
-	public String eliminarRegistro() {
-		String cadena = "delete from persona where(identificacionPersona='" 
-				+ this.getIdentificacion() + "');";
-		return cadena;
-	}
-
-	@Override
-	public String actualizarRegistro() {
-		String cadena = "update persona set telefono='" + this.getTelefono() 
-				+ "', direccion='" + this.getDireccion() + "' where(identificacionPersona='"
-				+ this.getIdentificacion() + "');";
-		return cadena;
-	}
-
-	@Override
-	public String buscarRegistro() {
-		String cadena = "select * from persona where(identificacionPersona='"  
-				+ this.getIdentificacion() + "');";
-		return cadena;
-	}
+    @Override
+    public String guardarRegistro() {
+      String cadena = "insert into persona values('" + this.getIdentificacion() 
+            + "','" + this.getNombre() + "','" + this.getTelefono() + "','" 
+            + this.getDireccion() + "'," + this.getFechaNacimiento() + ",'1');";
+      return cadena;
+    }
 
 }
