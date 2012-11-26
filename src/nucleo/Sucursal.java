@@ -22,37 +22,21 @@ package nucleo;
  * @author Karen Vanessa Angulo Sogamoso - 20112020055
  * @version 1.0
  */
-public class Sucursal extends Estacion implements AccesoaDatos{
+public class Sucursal extends Estacion {
 
-    /**
-     * Crea una nueva sucursal de la empresa
-     */
-    public Sucursal () {
-    }
+	/**
+	 * Crea una nueva sucursal de la empresa
+	 */
+	public Sucursal () {
+	}
 
-    @Override
-    public String guardarRegistro() {
-      // TODO Auto-generated method stub
-      return null;
-    }
-    
-    @Override
-    public String eliminarRegistro() {
-      // TODO Auto-generated method stub
-      return null;
-    }
-    
-    @Override
-    public String actualizarRegistro() {
-      // TODO Auto-generated method stub
-      return null;
-    }
-    
-    @Override
-    public String buscarRegistro() {
-      // TODO Auto-generated method stub
-      return null;
-    }
+	@Override
+	public String guardarRegistro() {
+		String cadena = "insert into estacion values('" + this.getCodigoEstacion()
+				+ "','" + this.getNombre() + "','" + this.getDireccion() + "','1'," 
+				+ this.getCiudad().getCodigoCiudad() + "');";
+		return cadena;
+	}
 
 }
 
