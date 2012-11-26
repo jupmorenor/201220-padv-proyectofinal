@@ -95,26 +95,28 @@ public class Ruta implements AccesoaDatos{
 
     @Override
     public String guardarRegistro() {
-      // TODO Auto-generated method stub
-      return null;
+      String cadena = "insert into ruta values('" + this.getCodigoRuta() 
+            + "','" + this.getNombreRuta() + "','" + this.getTarifaRuta() +"');";
+      return cadena;
     }
     
     @Override
     public String eliminarRegistro() {
-      // TODO Auto-generated method stub
-      return null;
+      String cadena = "delete from ruta where(nombreRuta='" + this.getNombreRuta() + "');";
+      return cadena;
     }
     
     @Override
     public String actualizarRegistro() {
-      // TODO Auto-generated method stub
-      return null;
+      String cadena = "update ruta set tarifaRuta='" + this.getTarifaRuta() 
+            + "' where(nombreRuta='" + this.getNombreRuta() + "');";
+      return cadena;
     }
     
     @Override
     public String buscarRegistro() {
-      // TODO Auto-generated method stub
-      return null;
+      String cadena = "select * from ruta where(nombreRuta='" + this.getNombreRuta() + "');";
+      return cadena;
     }
     
 }
