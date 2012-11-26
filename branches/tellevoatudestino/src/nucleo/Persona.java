@@ -24,7 +24,7 @@ import java.util.Date;
  * @author Karen Vanessa Angulo Sogamoso - 20112020055
  * @version 1.0
  */
-public abstract class Persona {
+public abstract class Persona implements AccesoaDatos{
 
     /**
      * Nombre de la persona
@@ -52,7 +52,7 @@ public abstract class Persona {
     private Date fechaNacimiento;
 
     /**
-     * Crea un n uevo empleado de la empresa
+     * Crea un nuevo empleado de la empresa
      */
     public Persona () {
     }
@@ -136,6 +136,30 @@ public abstract class Persona {
     public void setTelefono (String tel) {
         this.telefono = tel;
     }
+    
+    @Override
+    public abstract String guardarRegistro();
+    
+	  @Override
+	  public String eliminarRegistro() {
+		    String cadena = "delete from persona where(identificacionPersona='" 
+				    + this.getIdentificacion() + "');";
+		    return cadena;
+	  }
+
+	  @Override
+	  public String actualizarRegistro() {
+		    String cadena = "update persona set telefono='" + this.getTelefono() 
+				    + "', direccion='" + this.getDireccion() + "' where(identificacionPersona='"
+				    + this.getIdentificacion() + "');";
+		    return cadena;
+	  }
+
+	  @Override
+	  public String buscarRegistro() {
+		    String cadena = "select * from persona where(identificacionPersona='"  
+				    + this.getIdentificacion() + "');";
+		    return cadena;
+	  }
 
 }
-
