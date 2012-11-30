@@ -102,12 +102,12 @@ alter table PersonaTransporte
   foreign key (codTransporteP_fk)
   references transporte(codigoInterno);
 
-insert into tipoestacion values('1', 'Parada');
-insert into tipoestacion values('2', 'Sucursal');
+insert into tipoEstacion values('1', 'Parada');
+insert into tipoEstacion values('2', 'Sucursal');
 
-insert into tipopersona values('1', 'Conductor');
-insert into tipopersona values('2', 'Asistente');
+insert into tipoPersona values('1', 'Conductor');
+insert into tipoPersona values('2', 'Asistente');
 
-insert into tipotransporte values('1', 'Bus');
-insert into tipotransporte values('2', 'Colectivo');
+insert into tipoTransporte values('1', 'Bus');
+insert into tipoTransporte values('2', 'Colectivo');
 
