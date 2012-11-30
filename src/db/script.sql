@@ -7,3 +7,6 @@ create table Usuarios
 
 alter table Usuarios
 add primary key (usuario);
+
+insert into Usuarios
+values('admin', '12345', 'administrador');
