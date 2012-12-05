@@ -16,48 +16,38 @@
 package autenticador;
 
 /**
- * Clase que representa a un usuario que ingresa al sistema
+ * Clase que representa a un usuario en general
  * @author Juan Pablo Moreno Rico - 20111020059
  * @author Anderson Orlando Ramirez Lamprea - 20111020072
  * @author Karen Vanessa Angulo Sogamoso - 20112020055
  * @version 1.0
  */
-public class Usuario {
+public abstract class Usuario {
 	
 	/**
 	 * Nombre ingresado por el usuario
 	 */
-	private String usuario;
+	protected String nombre;
 	
 	/**
 	 * Contraseña del usuario
 	 */
-	private String password;
+	protected String password;
 	
-	/**
-	 * Comando de MySQL que verifica que el usuario se encuentre registrado en la BD
-	 * @return cadena de texto
-	 */
-	public String verificarUsuario() {
-		String cadena = "select * from usuarios where(usuario='" 
-				+ this.getUsuario() + "' and password='" + this.getPassword() + "');";
-		return cadena;
-	}
-
 	/**
 	 * Devuelve el nombre del usuario
 	 * @return nombre del usuario
 	 */
-	public String getUsuario() {
-		return usuario;
+	public String getNombre() {
+		return nombre;
 	}
 
 	/**
 	 * Establece el nombre del usuario
 	 * @param usuario nombre del usuario
 	 */
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setNombre(String usuario) {
+		this.nombre = usuario;
 	}
 
 	/**
@@ -75,5 +65,11 @@ public class Usuario {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	/**
+	 * Comando de MySQL que verifica que el usuario se encuentre registrado en la BD
+	 * @return cadena de texto
+	 */
+	public abstract String verificarUsuario();
 
 }
