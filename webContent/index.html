@@ -1,0 +1,56 @@
+<%-- 
+	Document   : index.jsp
+	Created on : 26/11/2012, 12:46:59 PM
+	Author     : Juan Pablo Moreno Rico - 20111020059
+	Author     : Anderson Orlando Ramirez Lamprea - 20111020072
+	Author     : Karen Vanessa Angulo Sogamoso - 20112020055
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Tellevoatudestino</title>
+	</head>
+	
+	<header>
+		<h1 align="center">Tellevoatudestino</h1>
+		<h2 align="center">
+			<img src="http://www.palmont-ltda.com/bogota/imagenes/Flota.jpg">
+		</h2>
+	</header>
+	<nav>
+		<h2 align="center">Iniciar sesion</h2>
+	</nav>
+	<body>
+		<section>
+			<form action="Autenticacion" method="post">
+				<table align="center" cellspacing="4">
+					<tr>
+						<td>Usuario</td>
+						<td><input type="text" name="Usuario" maxlength="16" size="16"
+							placeholder="ingrese usuario"></input></td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td><input type="password" name="Clave" maxlength="16"
+							size="16" placeholder="ingrese clave"></input></td>
+	
+					</tr>
+					<tr align="CENTER">
+						<td colspan="2"><input type="submit" value="ingresar"></input></td>
+					</tr>
+				</table>
+			</form>
+			<form action="registrarNuevo.jsp">
+				<table align="center">
+					<tr align="center">
+						<td colspan="2"><input type="Submit" value="registrarse"></input>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</section>
+	</body>
+</html>
