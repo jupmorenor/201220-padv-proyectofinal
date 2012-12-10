@@ -1,6 +1,6 @@
 create database tellevoatudestino_jak;
 use tellevoatudestino_jak;
-create table ruta(codigoRuta varchar(3), nombreRuta varchar(20), tarifaRuta int);
+create table ruta(codigoRuta varchar(3), nombreRuta varchar(20), tarifaRuta int, distanciaRuta int);
 create table transporte(capacidad int, placa varchar(6), codigoInterno int, consumoCombustible float,idTipoTransporte_fk varchar (3));
 create table tipoTransporte(idTipoTransporte varchar(3),descripTipoTransporte varchar (20));
 create table mantenimiento(idMantenimiento varchar(3), seguro Date, revision Date, idTransporte_fk int);
