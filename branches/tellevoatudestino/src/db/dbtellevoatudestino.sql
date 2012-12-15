@@ -4,7 +4,7 @@ create table ruta(codigoRuta varchar(3), nombreRuta varchar(20), tarifaRuta int,
 create table transporte(capacidad int, placa varchar(6), codigoInterno int, consumoCombustible float,idTipoTransporte_fk varchar (3));
 create table tipoTransporte(idTipoTransporte varchar(3),descripTipoTransporte varchar (20));
 create table mantenimiento(idMantenimiento varchar(3), seguro Date, revision Date, idTransporte_fk int);
-create table persona(identificacionPersona varchar(20), nombrePersona varchar(20), telefono varchar(20), direccion varchar(20), fechaNacimiento Date,idTipoPersona_fk int);
+create table persona(identificacionPersona varchar(20), nombrePersona varchar(20), telefono varchar(20), direccion varchar(20), fechaNacimiento Date, licencia int,idTipoPersona_fk int);
 create table tipoPersona(idTipoPersona int, descripTipoPersona varchar(20));
 create table horario(idHorario int, dia varchar (10));
 create table ciudad(codCiudad int, nombreCiudad varchar (20));
