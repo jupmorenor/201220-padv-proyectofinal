@@ -25,7 +25,7 @@ package autenticador;
 public class UsuarioNuevo extends Usuario {
 
 	@Override
-	public String verificarUsuario() {
+	public String consultarUsuario() {
 		String cadena = "select * from usuarios where(usuario='" + this.getNombre()
 				+ "');";
 		return cadena;
@@ -35,9 +35,10 @@ public class UsuarioNuevo extends Usuario {
 	 * Comando de MySQL que ingresa un nuevo registro a la base de datos de usuarios
 	 * @return cadena
 	 */
-	public String registrarUsuario(String tipo) {
+	@Override
+	public String modificarRegistro() {
 		String cadena = "insert into usuarios values('"+ this.getNombre() + "','"
-				+ this.getPassword() + "','" + tipo + "');";
+				+ this.getPassword() + "','" + this.getTipoUsuario() + "');";
 		return cadena;
 	}
 
