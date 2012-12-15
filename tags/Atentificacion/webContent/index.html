@@ -10,21 +10,36 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Tellevoatudestino</title>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<title>Autenticacion de usuarios</title>
 	</head>
 	
-	<header>
-		<h1 align="center">Tellevoatudestino</h1>
-		<h2 align="center">
-			<img src="http://www.palmont-ltda.com/bogota/imagenes/Flota.jpg">
-		</h2>
-	</header>
-	<nav>
-		<h2 align="center">Iniciar sesion</h2>
-	</nav>
 	<body>
-		<section>
+	
+		<!-- 
+		Division superior para presentar el titulo y la imagen de la portada
+		 -->
+		<div align="center">
+			<h1 align="center">Autenticacion de usuarios</h1>
+			<h2 align="center">
+				<img src="recursos/login_icon.png">
+				<!-- 
+				<img src="http://www.chippingcampdenonline.org/web_images/bus.png">
+				 -->
+			</h2>
+		</div>
+		
+		<!-- 
+		Division para el subtitulo
+		 -->
+		<div align="center">
+			<h2 align="center">Iniciar sesion</h2>
+		</div>
+	
+		<!--
+		Division que contiene los campos de texto de entrada y el comando de ingreso 
+		 -->
+		<div align="center">
 			<form action="Autenticacion" method="post">
 				<table align="center" cellspacing="4">
 					<tr>
@@ -35,22 +50,22 @@
 					<tr>
 						<td>Password</td>
 						<td><input type="password" name="Clave" maxlength="16"
-							size="16" placeholder="ingrese clave"></input></td>
+							size="16" placeholder="ingrese clave"></td>
 	
 					</tr>
-					<tr align="CENTER">
-						<td colspan="2"><input type="submit" value="ingresar"></input></td>
-					</tr>
-				</table>
-			</form>
-			<form action="registrarNuevo.jsp">
-				<table align="center">
 					<tr align="center">
-						<td colspan="2"><input type="Submit" value="registrarse"></input>
+						<td align="center" colspan="2"><input type="submit" name="Boton" value="ingresar"></td>
+					</tr>
+					<tr align="center">
+						<td align="center" colspan="2">
+							<div id="respuesta"></div>
 						</td>
 					</tr>
+					<tr align="center">
+						<td colspan="2"><input type="Submit" name="Boton" value="registrarse"></td>
+					</tr>
 				</table>
 			</form>
-		</section>
+		</div>
 	</body>
 </html>
