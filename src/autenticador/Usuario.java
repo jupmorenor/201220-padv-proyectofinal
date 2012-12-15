@@ -35,6 +35,11 @@ public abstract class Usuario {
 	protected String password;
 	
 	/**
+	 * Indica el tipo de usuario
+	 */
+	protected String tipoUsuario;
+	
+	/**
 	 * Devuelve el nombre del usuario
 	 * @return nombre del usuario
 	 */
@@ -67,9 +72,31 @@ public abstract class Usuario {
 	}
 	
 	/**
+	 * Devuelve el tipo de usuario
+	 * @return tipo de usuario
+	 */
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	/**
+	 * Establece el tipo de usuario
+	 * @param tipoUsuario tipo de usuario
+	 */
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+
+	/**
 	 * Comando de MySQL que verifica que el usuario se encuentre registrado en la BD
 	 * @return cadena de texto
 	 */
-	public abstract String verificarUsuario();
-
+	public abstract String consultarUsuario();
+	
+	/**
+	 * Comando de MySQL que modifica un registro en la base de datos
+	 * @return cadena de texto
+	 */
+	public abstract String modificarRegistro();
+	
 }
