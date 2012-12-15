@@ -1,42 +1,36 @@
 <%-- 
-	Document   : MenuAdmin
+	Document   : MenuAdmin.jsp
 	Created on : 09/12/2012
 	Author     : Juan Pablo Moreno Rico - 20111020059
 	Author     : Anderson Orlando Ramirez Lamprea - 20111020072
 	Author     : Karen Vanessa Angulo Sogamoso - 20112020055
 --%>
-<%@page contentType="php/html" pageEncoding="UTF-8"%>
-<%@page import="java.sql.ResultSet"%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<% ResultSet usuarios = (ResultSet)session.getAttribute("usuarios"); %>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Administracion</title>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<title>Autenticacion de usuarios</title>
 	</head>
-	
-	<header>
-		<h1 align="center">Administracion de cuentas de usuario</h1>
-	</header>
-	<nav>
-		<h2 align="center">Usuarios existentes</h2>
-	</nav>
 	<body>
-		<section>
-		<form action="MenuAdmin" method="post">
-				<table align="center" border="5">
-					<tr>
-						<th>Nombre de usuario</th>
-						<th>Tipo de usuario</th>
-						<th>Comando</th>
+		<div>
+			<h1 align="center">Administracion de cuentas de usuario</h1>
+		</div>
+		<div>
+			<h2 align="center">Modulo de Administracion</h2>
+		</div>
+		<div align="center">
+			<form action="MenuAdmin" method="post">
+				<table align="center">
+					<tr align="center">
+						<td><input type="Submit" name="BotonMenu" value="Administrar"></td>
 					</tr>
-					<tr>
-						<td><% usuarios.getString("usuario"); %></td>
-						<td></td>
-						<td><input type="Submit" value="borrar"></td>
+					<tr align="center">
+						<td><input type="Submit" name="BotonMenu" value="Abrir Sistema"></td>
 					</tr>
 				</table>
 			</form>
-		</section>
+		</div>
 	</body>
 </html>
