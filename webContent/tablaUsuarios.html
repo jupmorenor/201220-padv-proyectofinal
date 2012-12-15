@@ -1,0 +1,47 @@
+<%-- 
+	Document   : tablaUsuarios.jsp
+	Created on : 09/12/2012
+	Author     : Juan Pablo Moreno Rico - 20111020059
+	Author     : Anderson Orlando Ramirez Lamprea - 20111020072
+	Author     : Karen Vanessa Angulo Sogamoso - 20112020055
+--%>
+
+<%@page import="java.sql.ResultSet"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% ResultSet tabla = (ResultSet)session.getAttribute("usuarios"); %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<title>Autenticacion de usuarios</title>
+	</head>
+	<body>
+		<div>
+			<h1 align="center">Administracion de cuentas de usuario</h1>
+		</div>
+		<div>
+			<h2 align="center">Usuarios existentes</h2>
+		</div>
+		<div align="center">
+			<form action="MenuAdmin" method="post">
+				<table align="center" border="5">
+					<tr>
+						<th>Nombre de usuario</th>
+						<th>Tipo de usuario</th>
+						<th>Comando</th>
+					</tr>
+					<% while (tabla.next()){ %>
+					<tr>
+						<td><%= tabla.getString("usuario") %></td>
+						<td><%= tabla.getString("roll") %></td>
+						<td>
+							<input type="Submit" value="borrar">
+							<input type="hidden" name="BotonMenu" value="<%= tabla.getString("usuario")%>">
+						</td>
+					</tr>
+                    <% }%>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>
