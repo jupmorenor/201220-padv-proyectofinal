@@ -4,11 +4,11 @@ create table ruta(codigoRuta varchar(3), nombreRuta varchar(20), tarifaRuta int,
 create table transporte(capacidad int, placa varchar(6), codigoInterno int, consumoCombustible float,idTipoTransporte_fk varchar (3));
 create table tipoTransporte(idTipoTransporte varchar(3),descripTipoTransporte varchar (20));
 create table mantenimiento(idMantenimiento varchar(3), seguro Date, revision Date, idTransporte_fk int);
-create table persona(identificacionPersona varchar(20), nombrePersona varchar(20), telefono varchar(20), direccion varchar(20), fechaNacimiento Date, licencia int,idTipoPersona_fk int);
+create table persona(identificacionPersona varchar(20), nombrePersona varchar(20), telefono varchar(20), direccion varchar(20), fechaNacimiento Date, licencia int, idTipoPersona_fk int);
 create table tipoPersona(idTipoPersona int, descripTipoPersona varchar(20));
 create table horario(idHorario int, dia varchar (10));
 create table ciudad(codCiudad int, nombreCiudad varchar (20));
-create table estacion (codigoEstacion varchar(3), nombreEstacion varchar(20), direccionEstacion varchar(20), idTipoEstacion_fk varchar(3),idCiudad int);
+create table estacion (codigoEstacion varchar(3), nombreEstacion varchar(20), direccionEstacion varchar(20), idTipoEstacion_fk varchar(3), idCiudad int);
 create table tipoEstacion(idTipoEstacion varchar(3), nombreTipoEstacion varchar(20));
 
 create table RutaEstacion(idRutaEstacion varchar(3), idRuta_fk varchar(3),idEstacion_fk varchar(3));
@@ -107,6 +107,7 @@ insert into tipoEstacion values('2', 'Sucursal');
 
 insert into tipoPersona values('1', 'Conductor');
 insert into tipoPersona values('2', 'Asistente');
+insert into tipoPersona values('3', 'UsuarioCliente');
 
 insert into tipoTransporte values('1', 'Bus');
 insert into tipoTransporte values('2', 'Colectivo');
