@@ -17,15 +17,19 @@
 
     </head>
     <body style="background-color: #000000">
+        <!-- Capas de la pagina (div) -->
         <div class="xr_ap" id="xr_xr" style="width: 1050px; height: 1000px; top:0px; left:50%; margin-left: -525px;">
             <div class="xr_ap" id="xr_xri" style="width: 1050px; height: 1100px; clip: rect(0px, 1050px, 1500px, 0px); position: relative; margin-left: auto; margin-right: auto;">
+                <!-- Imagenes principales -->
                 <img class="xr_ap" src="imagenes/fondo.png" alt="" title="" style="left: 25px; top: 28px; width: 1000px; height: 1000px;"/>
                 <img class="xr_ap" src="imagenes/bingo_logo.gif" alt="" title="" style="left: 680px; top: 28px; width: 312px; height: 78px;"/>
                 <img class="xr_ap" src="imagenes/panelLateral.png" alt="" title="" style="left: 666px; top: 105px; width: 336px; height: 677px;"/>
                 <img class="xr_ap" src="imagenes/panelPrincipal.png" alt="" title="" style="left: 47px; top: 105px; width: 620px; height: 677px;"/>
                 <img class="xr_ap" src="imagenes/barra.png" alt="" title="" style="left: 36px; top: 46px; width: 643px; height: 71px;"/>
+                <!-- Forma y ubicacion de los botones del panel lateral -->
                 <img class="xr_ap" src="imagenes/formaBoton.png" alt="" title="" style="left: 639px; top: 150px; width: 389px; height: 104px;"/>
                 <img class="xr_ap" src="imagenes/formaBoton.png" alt="" title="" style="left: 639px; top: 230px; width: 389px; height: 104px;"/>
+                <!-- Etiquetas con botones del panel lateral y paginas a las que redirigen -->
                 <a href="tablaDePuntuacion_todos.jsp">
                     <img class="xr_ap" src="imagenes/botonTablaDePuntuacion.png" style="left: 711px; top: 185px; width: 245px; height: 34px;" alt="" title="Tabla de puntuacion"</>
                 </a>
@@ -33,6 +37,8 @@
                     <img class="xr_ap" src="imagenes/botonSalir.png" style="left: 711px; top: 265px; width: 245px; height: 34px;" alt="" title="Inicio"</>
                 </a>
 
+                <!-- Chat -->
+                <!-- Al hacer clic en enviar, realiza la funcion "insertarMensaje()" que se encuentra en bingo.js -->
                 <table class="xr_ap" style="TOP: 340px; LEFT: 680px">
                     <tr>
                         <td><textarea id="msjChat" name="msjChat"  cols="27" rows="1" placeholder="Digite su mensaje"></textarea></td>
@@ -46,6 +52,7 @@
                     </tr>
                 </table>
 
+                <!-- Numero y letra de la balota sacada por el servidor -->
                 <TABLE class='bigNum' CELLSPACING='0' CELLPADDING='0' STYLE='POSITION: ABSOLUTE; TOP: 400px; LEFT: 480px'>
                     <TR>
                         <TD style="COLOR: maroon; font-size: 50px" id="pickedLetter" width="50">
@@ -55,6 +62,8 @@
                     </TR>
                 </TABLE>
 
+                <!-- Boton que permite al servidor sacar una nueva balota -->
+                <!-- Al hacer clic, realiza la funcion showNumber() que se encuentra en bingo.js -->
                 <div class="xr_ap" STYLE='POSITION: ABSOLUTE; TOP: 320px; LEFT: 500px'>
                     <input type='button' onclick='showNumber()' value='Sacar balota'>
 
@@ -62,8 +71,8 @@
                 <SCRIPT TYPE="text/javascript">
 
                     //Muestra en pantalla el bingo
-                    SetupVar()
-                    SetupScreen()
+                    SetupVar()  // Configuracion inicial
+                    SetupScreen() //Muestra la tabla con todos los numeros del bingo
 
                 </SCRIPT>
 
