@@ -1,7 +1,7 @@
 CREATE DATABASE bingo;
 USE bingo;
 CREATE TABLE Bingo( idBingo INT NOT NULL AUTO_INCREMENT, descBingo VARCHAR(30), PRIMARY KEY (idBingo)); 
-CREATE TABLE Carton( idCarton INT NOT NULL AUTO_INCREMENT, descCarton VARCHAR(30),puntuacion INT, fk_idBingo INT NOT NULL, fk_idUsuario INT NOT NULL, PRIMARY KEY (idCarton));
+CREATE TABLE Carton( idCarton INT NOT NULL AUTO_INCREMENT, descCarton VARCHAR(30), fk_idBingo INT NOT NULL, fk_idUsuario INT NOT NULL, PRIMARY KEY (idCarton));
 CREATE TABLE Balotas( idBalotas INT NOT NULL AUTO_INCREMENT, letra VARCHAR(1) NOT NULL, numero INT NOT NULL, fk_idCarton INT NOT NULL, PRIMARY KEY (idBalotas));
 CREATE TABLE BalotasCorrectas( idBalotaCorrec INT NOT NULL AUTO_INCREMENT, letra VARCHAR(1) NOT NULL, numero INT NOT NULL, fk_idBingo INT NOT NULL, PRIMARY KEY (idBalotaCorrec));
 CREATE TABLE personabingo (idUsuario INT NOT NULL AUTO_INCREMENT, nombreUsuario VARCHAR(30), fk_idTipoPersona INT NOT NULL, PRIMARY KEY (idUsuario));
