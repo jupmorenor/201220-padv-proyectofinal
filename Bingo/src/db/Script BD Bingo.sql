@@ -31,3 +31,7 @@ ALTER TABLE personabingo
   ADD CONSTRAINT fk_TipoPersona_PersonaBingo1
   FOREIGN KEY (idTipoPersona_fk)
   REFERENCES tipoPersona(idTipoPersona);
+  
+
+INSERT INTO tipopersona (descripTipoPersona) VALUES ('servidor'); 
+INSERT INTO tipopersona (descripTipoPersona) VALUES ('cliente'); 
