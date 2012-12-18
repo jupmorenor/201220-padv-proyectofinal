@@ -12,7 +12,7 @@ add primary key (id);
 
 alter table jugadores
  add constraint fk_tipoJugador_jugadores1
- foreign key (idTipoJugador_fk)
+ foreign key (tipo_fk)
  references tipoJugador(id);
 
 insert into tipoJugador values(1, 'servidor');
