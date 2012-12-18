@@ -1,0 +1,89 @@
+<%--
+    Document   : bingoServidor
+    Created on : 17/12/2012, 06:10:06 PM
+    Author     : Anderson Ramirez, Juan Pablo Moreno, Karen Angulo
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="Autenticador.pruebaCodigoDirecto" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252"/>
+        <title>BINGO</title>
+        <link rel="stylesheet" type="text/css" href="estilos/xr_main.css"/>
+        <link rel="stylesheet" type="text/css" href="estilos/xr_text.css"/>
+        <script type="text/javascript" charset="UTF-8" src="javascripts/bingo.js"></script>
+    </head>
+    <body style="background-color: #000000">
+        <div class="xr_ap" id="xr_xr" style="width: 1050px; height: 1000px; top:0px; left:50%; margin-left: -525px;">
+            <div class="xr_ap" id="xr_xri" style="width: 1050px; height: 1100px; clip: rect(0px, 1050px, 1500px, 0px); position: relative; margin-left: auto; margin-right: auto;">
+                <img class="xr_ap" src="imagenes/fondo.png" alt="" title="" style="left: 25px; top: 28px; width: 1000px; height: 1000px;"/>
+                <img class="xr_ap" src="imagenes/bingo_logo.gif" alt="" title="" style="left: 680px; top: 28px; width: 312px; height: 78px;"/>
+                <img class="xr_ap" src="imagenes/panelLateral.png" alt="" title="" style="left: 666px; top: 105px; width: 336px; height: 677px;"/>
+                <img class="xr_ap" src="imagenes/panelPrincipal.png" alt="" title="" style="left: 47px; top: 105px; width: 620px; height: 677px;"/>
+                <img class="xr_ap" src="imagenes/barra.png" alt="" title="" style="left: 36px; top: 46px; width: 643px; height: 71px;"/>
+                <img class="xr_ap" src="imagenes/formaBoton.png" alt="" title="" style="left: 639px; top: 150px; width: 389px; height: 104px;"/>
+                <img class="xr_ap" src="imagenes/formaBoton.png" alt="" title="" style="left: 639px; top: 230px; width: 389px; height: 104px;"/>
+                <a href="tablaDePuntuacion_todos.jsp">
+                    <img class="xr_ap" src="imagenes/botonTablaDePuntuacion.png" style="left: 711px; top: 185px; width: 245px; height: 34px;" alt="" title="Tabla de puntuacion"</>
+                </a>
+                <a href="index.jsp">
+                    <img class="xr_ap" src="imagenes/botonSalir.png" style="left: 711px; top: 265px; width: 245px; height: 34px;" alt="" title="Inicio"</>
+                </a>
+
+                <table class="xr_ap" style="TOP: 340px; LEFT: 680px">
+                    <tr>
+                        <td><textarea id="msjChat" name="msjChat"  cols="27" rows="1" placeholder="Digite su mensaje"></textarea></td>
+                        <td><input name="botonEnviar" id="botonEnviar" type=button value="enviar" onclick="insertarMensaje()"></td>
+                    </tr>
+                    <tr>
+                        <td class="xr_s5" colspan="2" align="left">
+                            <textarea name="contenidoChat" id="contenidoChat" cols="35" rows="20" readonly="readonly" ></textarea>
+
+
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <TABLE class="xr_ap" STYLE='POSITION: ABSOLUTE; TOP: 170px; LEFT: 135px'>
+                    <TR>
+                        <TD>
+                            <img onClick="javascript:strGrid='xxxxxxoooxxoooxxoooxxxxxx';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/big_box.gif" alt="Large box">
+                            <img onClick="javascript:strGrid='ooooooxxxooxoxooxxxoooooo';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/small_box.gif" alt="Small box">
+                            <img onClick="javascript:strGrid='xxoooxxooooooooxxoooxxooo';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/corners_big.gif" alt="Postage stamp">
+                            <img onClick="javascript:strGrid='xoooxoooooooooooooooxooox';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/corners_small.gif" alt="Four corners">
+                            <img onClick="javascript:strGrid='xxxxxooxooooxooooxooooxoo';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/t.gif" alt="Letter T">
+                            <img onClick="javascript:strGrid='xooooxooooxxxxxxooooxoooo';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/crazy_t.gif" alt="Crazy T">
+                            <img onClick="javascript:strGrid='ooxooooxooxxxxxooxooooxoo';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/cross_big.gif" alt="Large cross">
+                            <img onClick="javascript:strGrid='oooooooxoooxxxoooxooooooo';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/cross_small.gif" alt="Small cross">
+                            <img onClick="javascript:strGrid='xxxxxxxxxxxxxxxxxxxxxxxxx';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/full_card.gif" alt="Full card">
+                            <img onClick="javascript:strGrid='xoooooxoooooxoooooxooooox';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/line.gif" alt="Line">
+                            <img onClick="javascript:strGrid='xooooxxoooxxxooxxxxoxxxxx';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/triangle.gif" alt="Triangle">
+                            <img onClick="javascript:strGrid='xoooxoxoxoooxoooxoxoxooox';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/x.gif" alt="Large X">
+                            <img onClick="javascript:strGrid='xxxxxoxoxoooxoooxoxoxooox';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/picnic.gif" alt="Picnic table">
+                            <img onClick="javascript:strGrid='xxxxxoooxoooxoooxoooxoooo';GameStyle(strGrid)" src="imagenes/imagenesTipoJuego/seven.gif" alt="Seven">
+                        </TD>
+                    </TR>
+                </TABLE>
+
+                <form action="servidor_bingo.jsp" >
+                    <div class="xr_ap" STYLE='TOP: 450px; LEFT: 330px'>
+                        <input id="botonAceptar" type=submit value="Aceptar">
+                    </div>
+                </form>
+
+                <SCRIPT TYPE="text/javascript" >
+
+                    //Muestra en pantalla el tipo de juego
+                    SetupVar()
+                    DrawCard()
+                    GameStyle('xxxxxxxxxxxxxxxxxxxxxxxxx')
+
+                </SCRIPT>
+
+            </div>
+        </div>
+    </body>
+</html>
+
