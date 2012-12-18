@@ -6,6 +6,7 @@ CREATE TABLE Balotas( idBalotas INT NOT NULL AUTO_INCREMENT, letra VARCHAR(1) NO
 CREATE TABLE BalotasCorrectas( idBalotaCorrec INT NOT NULL AUTO_INCREMENT, letra VARCHAR(1) NOT NULL, numero INT NOT NULL, fk_idBingo INT NOT NULL, PRIMARY KEY (idBalotaCorrec));
 CREATE TABLE personabingo (idUsuario INT NOT NULL AUTO_INCREMENT, nombreUsuario VARCHAR(30), fk_idTipoPersona INT NOT NULL, PRIMARY KEY (idUsuario));
 CREATE TABLE tipoPersona (idTipoPersona INT NOT NULL AUTO_INCREMENT, descripTipoPersona VARCHAR(20), PRIMARY KEY (idTipoPersona));
+CREATE TABLE partidasGanadas( idPartidGanadas INT NOT NULL AUTO_INCREMENT,descPartida VARCHAR (20), fk_idUsuario INT NOT NULL, PRIMARY KEY (idPartidGanadas));
  
 ALTER TABLE Carton
 ADD CONSTRAINT fk_Bingo_Carton_1 
@@ -32,6 +33,10 @@ ALTER TABLE personabingo
   FOREIGN KEY (idTipoPersona_fk)
   REFERENCES tipoPersona(idTipoPersona);
   
-
+ALTER TABLE partidasGanadas
+ADD CONSTRAINT fk_Persona_partidasGanadas_1 
+FOREIGN KEY (fk_idUsuario) 
+REFERENCES personabingo(idUsuario);
+  
 INSERT INTO tipopersona (descripTipoPersona) VALUES ('servidor'); 
 INSERT INTO tipopersona (descripTipoPersona) VALUES ('cliente'); 
